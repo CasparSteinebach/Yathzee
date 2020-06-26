@@ -10,6 +10,7 @@ public class Worp {
     ArrayList<Integer> blokkeerArray = new ArrayList<Integer>();
     ArrayList<Dobbelsteen> dobbelstenen = new ArrayList<Dobbelsteen>();
     ArrayList<Dobbelsteen> uitslagWorp = new ArrayList<Dobbelsteen>();
+    ArrayList<Integer> verzamelLijst = new ArrayList<Integer>();
 
     void setArrays() {
         for (int i = 0; i < 5; i++) {
@@ -47,11 +48,11 @@ public class Worp {
         System.out.print("Jouw verzamelde dobbelstenen : ");
         System.out.println();
         for (Dobbelsteen w : uitslagWorp) {
-            int worpuitslagWorp = w.worp;
             if(w.worp == 0){
                 System.out.print("");
             } else {
                 System.out.print(w.worp + " ");
+                verzamelLijst.add(w.worp);
             }
         }
         System.out.println();
@@ -89,4 +90,14 @@ public class Worp {
             }
         }
     }
+
+    public ArrayList<Integer> getVerzamelijst() {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        for(int i=0;i<verzamelLijst.size();i++){
+            numbers.add(i,verzamelLijst.get(i));
+            System.out.println(">>>>" + numbers.get(i) + " ");
+        }
+        return(numbers);
+    }
 }
+

@@ -3,7 +3,6 @@ package com.company;
 import java.util.Scanner;
 
 public class YahtzeeSpel {
-
     Speler speler = new Speler();
     Scanner scanner = new Scanner(System.in);
     boolean spel = true;
@@ -30,6 +29,8 @@ public class YahtzeeSpel {
                     worp.vasthouden();
                     worp.flushArrays();
                     worp.printUitslag();
+                    worp.getVerzamelijst();
+                    speler.worpenlijstSpeler();
                     worp.getWorp();
                     worpAantal++;
                 }
