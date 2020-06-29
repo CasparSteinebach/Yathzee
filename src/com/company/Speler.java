@@ -6,12 +6,22 @@ import java.util.Arrays;
 
 public class Speler {
     Worp w = new Worp();
+    String naam;
+    ArrayList<Integer> lijst = new ArrayList<>();
+
+    Speler(String naam){
+        this.naam = naam;
+    }
+
+    Speler(ArrayList<Integer> lijst){
+        this.lijst = lijst;
+    }
+
+
     public void worpenlijstSpeler(){
-        ArrayList<Integer> uitslag = w.getVerzamelijst();
-        for(Integer w : uitslag){
-            int i = 0;
-            System.out.println("UITSLAG GODVERREDOMME" + uitslag.get(i));
-            i++;
+        this.lijst = w.getVerzamelijst();
+        for(int i = 0; i < this.lijst.size(); i++){
+            System.out.println("UITSLAG GODVERREDOMME" + this.lijst.get(i));
         }
     }
 

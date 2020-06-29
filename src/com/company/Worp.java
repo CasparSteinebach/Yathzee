@@ -14,9 +14,11 @@ public class Worp {
 
     void setArrays() {
         for (int i = 0; i < 5; i++) {
-            blokkeerArray.add(i, 0);
-            dobbelstenen.add(new Dobbelsteen(dobbelsteen.werpen()));
+            int worp = dobbelsteen.werpen(); // werpen
+            blokkeerArray.add(i, 0); // blokkeerarray resetten
+            dobbelstenen.add(new Dobbelsteen(worp)); // worpen toevoegen
             uitslagWorp.add(new Dobbelsteen(0));
+            verzamelLijst.add(worp);
         }
     }
 
@@ -37,11 +39,16 @@ public class Worp {
 
     void flushArrays(){
         dobbelstenen.clear();
-        System.out.println("Dobbelstenen is leeg: " + dobbelstenen);
+        //System.out.println("Dobbelstenen is leeg: " + dobbelstenen);
         for (int i = 0; i < 5; i++) {
-            dobbelstenen.add(new Dobbelsteen(dobbelsteen.werpen()));
+            int worp = dobbelsteen.werpen();
+            dobbelstenen.add(new Dobbelsteen(worp));
+            if (blokkeerArray.get(i) == 0) {
+                    verzamelLijst.add(worp);
+                }
+            }
+
         }
-    }
 
     public void printUitslag(){
         System.out.println("=================================");
@@ -52,7 +59,7 @@ public class Worp {
                 System.out.print("");
             } else {
                 System.out.print(w.worp + " ");
-                verzamelLijst.add(w.worp);
+                //verzamelLijst.add(w.worp);
             }
         }
         System.out.println();
@@ -92,11 +99,13 @@ public class Worp {
     }
 
     public ArrayList<Integer> getVerzamelijst() {
+
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        for(int i=0;i<verzamelLijst.size();i++){
-            numbers.add(i,verzamelLijst.get(i));
-            System.out.println(">>>>" + numbers.get(i) + " ");
+        for(int i=0; i < verzamelLijst.size(); i++){
+            numbers.add(verzamelLijst.get(i));
+            System.out.print(numbers.get(i) + " ");
         }
+        System.out.println();
         return(numbers);
     }
 }
