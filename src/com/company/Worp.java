@@ -103,7 +103,7 @@ public class Worp {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         for(int i=0; i < verzamelLijst.size(); i++){
             numbers.add(verzamelLijst.get(i));
-            System.out.print(numbers.get(i) + " ");
+            //System.out.print(numbers.get(i) + " ");
         }
         System.out.println();
         return(numbers);

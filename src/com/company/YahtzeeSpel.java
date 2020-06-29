@@ -3,12 +3,26 @@ package com.company;
 import java.util.Scanner;
 
 public class YahtzeeSpel {
+    Scanner scanner = new Scanner(System.in);
     Speler speler1 = new Speler("Sjaak");
     Speler speler2 = new Speler("Piet");
-    Scanner scanner = new Scanner(System.in);
-    boolean spel = true;
-    int worpAantal = 0;
 
+    public void spelen(){
+        System.out.println("****** WELKOM BIJ YAHTZEE ******");
+        System.out.println("Speler 1, wat is je naam? ");
+        speler1.naam = scanner.nextLine();
+        System.out.println("Speler 2, wat is je naam? ");
+        speler2.naam = scanner.nextLine();
+        speler1.spelen();
+        speler2.spelen();
+        System.out.println("worpen " + speler1.naam);
+        speler1.worpenlijstSpeler();
+        System.out.println();
+        System.out.println("worpen " + speler2.naam);
+        speler2.worpenlijstSpeler();
+    }
+
+    /*
     public void spelen() {
 
         while (spel) {
@@ -43,6 +57,8 @@ public class YahtzeeSpel {
             }
         }
     }
+
+     */
 }
 
 
